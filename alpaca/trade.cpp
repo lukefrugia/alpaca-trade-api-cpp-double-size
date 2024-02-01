@@ -15,6 +15,9 @@ Status Trade::fromJSON(const std::string& json) {
   if (!d.IsObject()) {
     return Status(1, "Deserialized valid JSON but it wasn't a trade object");
   }
+  // https://github.com/Tencent/rapidjson/blob/48fbd8cd202ca54031fe799db2ad44ffa8e77c13/include/rapidjson/writer.h
+  // line 173
+  SetMaxDecimalPlaces(4); 
 
   PARSE_DOUBLE(price, "price")
   PARSE_DOUBLE(size, "size")
