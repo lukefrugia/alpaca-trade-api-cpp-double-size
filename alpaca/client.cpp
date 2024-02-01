@@ -289,7 +289,7 @@ std::pair<Status, std::vector<Order>> Client::getOrders(const ActionStatus statu
 }
 
 std::pair<Status, Order> Client::submitOrder(const std::string& symbol,
-                                             const int quantity,
+                                             const double quantity,
                                              const OrderSide side,
                                              const OrderType type,
                                              const OrderTimeInForce tif,
@@ -306,12 +306,13 @@ std::pair<Status, Order> Client::submitOrder(const std::string& symbol,
   s.Clear();
   rapidjson::Writer<rapidjson::StringBuffer> writer(s);
   writer.StartObject();
+  writer.SetMaxDecimalPlaces(4);
 
   writer.Key("symbol");
   writer.String(symbol.c_str());
 
   writer.Key("qty");
-  writer.Int(quantity);
+  writer.Double(quantity);
 
   writer.Key("side");
   writer.String(orderSideToString(side).c_str());
