@@ -225,7 +225,7 @@ class Client {
    * created alpaca::Order object.
    */
   std::pair<Status, Order> submitOrder(const std::string& symbol,
-                                       const int quantity,
+                                       const double quantity,
                                        const OrderSide side,
                                        const OrderType type,
                                        const OrderTimeInForce tif,
