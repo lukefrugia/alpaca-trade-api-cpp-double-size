@@ -17,7 +17,7 @@ Status Trade::fromJSON(const std::string& json) {
   }
 
   PARSE_DOUBLE(price, "price")
-  PARSE_INT(size, "size")
+  PARSE_DOUBLE(size, "size")
   PARSE_INT(exchange, "exchange")
   PARSE_INT(cond1, "cond1")
   PARSE_INT(cond2, "cond2")
