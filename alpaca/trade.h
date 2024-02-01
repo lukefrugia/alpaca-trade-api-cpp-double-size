@@ -22,7 +22,7 @@ class Trade {
 
  public:
   double price;
-  int size;
+  double size;
   int exchange;
   int cond1;
   int cond2;
