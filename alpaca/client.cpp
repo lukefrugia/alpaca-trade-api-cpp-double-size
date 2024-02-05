@@ -306,7 +306,7 @@ std::pair<Status, Order> Client::submitOrder(const std::string& symbol,
   s.Clear();
   rapidjson::Writer<rapidjson::StringBuffer> writer(s);
   writer.StartObject();
-  writer.SetMaxDecimalPlaces(8);
+  writer.SetMaxDecimalPlaces(2);
 
   writer.Key("symbol");
   writer.String(symbol.c_str());
